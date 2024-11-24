@@ -87,18 +87,9 @@ iframe{
     min-height: 600;
 }
 
-df-messenger-send-icon-color{
-    color: #353C35;
+:root{
+    --df-messenger-primary-color: red;
 }
-
-df-messenger-input-font-color{
-    color:red;
-}
-
-df-messenger-auth-background{
-    border: #4B664C;
-}
-
 
 /* responsividade */
 
