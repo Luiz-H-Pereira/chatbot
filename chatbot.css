@@ -89,6 +89,7 @@ iframe{
 
 :root{
     --df-messenger-primary-color: red;
+    --df-messenger-titlebar-background: red;
 }
 
 /* responsividade */
