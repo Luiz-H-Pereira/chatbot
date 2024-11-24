@@ -87,10 +87,12 @@ iframe{
     min-height: 600;
 }
 
-:root{
-    --df-messenger-primary-color: red;
-    --df-messenger-titlebar-background: red;
-}
+df-messenger div[chat-avatar] {
+    background-image: url('avatar.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
 /* responsividade */
 
