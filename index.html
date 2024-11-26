@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="chatbot.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -13,30 +14,78 @@
 <body>
     <nav>
         <ul>
-            <li>Chatbot</li>
+            <a href="#"><li>inicio</li></a>
+            <a href="#"><li>mapa mental</li></a>
+            <a href="#"><li>formulario</li></a>
         </ul>
     </nav>
-    <section class="menu">
-        <h1>Bem-vindo ao Chatbot Cain!</h1>
-        <a href="chatbot2.html"><button>Falar com Cain</button></a>
+
+    <section class="leve">
+        <div class="sobre_mim">
+            <h2>Olá! Eu sou Cain, </h2>
+            <p>seu assistente virtual dedicado a ajudar com dúvidas relacionadas à assistência de enfermagem no pós-operatório. Fui projetado especialmente para estudantes do curso técnico em Enfermagem, com base no conteúdo de sua apostila. Meu objetivo é tornar o aprendizado mais fácil e interativo, garantindo que você tenha as informações necessárias de forma rápida e clara.</p>
+        </div>
+        <div class="imagem">
+            <img src="avatar.png" width="500px">
+        </div>
     </section>
+    <section class="medio">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="mapa_mental_1.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="mapa_mental_1.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="mapa_mental_1.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </section>
+
+    <section class="pesado">
+          <!-- Make sure you don't change the form action-->
+    <form action="https://api.staticforms.xyz/submit" method="post">
+        <!-- Replace with accesKey sent to your email -->
+        <input type="hidden" name="accessKey" value="e44fc5d0-0b52-4cb1-9f79-fefc3800d89c"> <!-- Required -->
+        <input type="text" name="name"> <!-- Optional -->
+        <input type="text" name="subject"> <!-- Optional -->
+        <input type="text" name="email"> <!-- Optional -->
+        <input type="text" name="phone"> <!-- Optional -->
+        <textarea name="message"></textarea> <!-- Optional -->
+        <!-- If you want replyTo to be set to specific email -->
+        <input type="text" name="replyTo" value="myreplytoemail@example.com"> <!-- Optional -->
+        <!-- Specify @ as reply to value if you want it to be customers email -->
+        <input type="hidden" name="replyTo" value="@"> <!-- Optional -->
+        <!-- If you want form to redirect to a specific url after submission -->
+        <input type="hidden" name="redirectTo" value="https://example.com/contact/success"> <!-- Optional -->
+        <input type="submit" value="Submit" />
+    </form>
+    </section>
+    
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger
-  intent="WELCOME"
-  chat-title="Cain"
-  agent-id="350ae4f4-bffc-4a57-a597-790a2206420f"
-  language-code="pt-br"
-  style="--df-messenger-button-titlebar-color: #4B664C; --df-messenger-bot-message: #4B664C;"  
-></df-messenger>
-<style>
-  df-messenger div[chat-avatar] {
-    background-image: url('https://www.google.com/imgres?q=homem%20normal&imgurl=https%3A%2F%2Fw7.pngwing.com%2Fpngs%2F177%2F997%2Fpng-transparent-man-cartoon-caricature-beard-face-normal-expression-expression-thumbnail.png&imgrefurl=https%3A%2F%2Fwww.pngwing.com%2Fpt%2Fsearch%3Fq%3Dhomem%2Bnormal&docid=Y6Hdr4k70xrlLM&tbnid=x6bJ3u1ICR_rLM&vet=12ahUKEwjfn4XnkvaJAxXWG7kGHe-MJ2IQM3oECB0QAA..i&w=360&h=640&hcb=2&ved=2ahUKEwjfn4XnkvaJAxXWG7kGHe-MJ2IQM3oECB0QAA');
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-  }
-</style>
+    <df-messenger
+    intent="WELCOME"
+    chat-title="Cain"
+    agent-id="350ae4f4-bffc-4a57-a597-790a2206420f"
+    language-code="pt-br"
+    style="--df-messenger-button-titlebar-color: #273446; --df-messenger-bot-message: #8B929B;"  
+    ></df-messenger>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
